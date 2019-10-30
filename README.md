@@ -3,11 +3,11 @@
 # esri-wab-build
 Package used to build ESRI Web App Builder Apps for production.
 
-Verified and designed for 2D Apps built using Web App Builder for Developers 2.3 - 2.7.
+Verified and designed for 2D Apps built using Web App Builder for Developers 2.11.
 
 This task runs a full dojo build on any web app builder application, which will greatly improve performance.
 
-Based largely around the scripts built by Junshan Liu (@qlqllu) at https://geonet.esri.com/docs/DOC-7934
+Based largely around the scripts built by Junshan Liu (@qlqllu) at https://github.com/Esri-DevCenter-Beijing/wab-app-build-script
 
 ## Requirements:
 * Bower (validated with 1.8.0)
@@ -17,13 +17,13 @@ Based largely around the scripts built by Junshan Liu (@qlqllu) at https://geone
 * Git
 
 ## Warning
-If you see an error around dojo-themes, run: ```bower cache clear``` and try again.
+If you see an error around dojo-themes, run: ```bower cache clean``` and try again.
 
 ## Install and run locally:
 
 ### Setup
 1. Navigate to the application to be built
-2. Create a project.json file (if one does not exist): ```npm init```
+2. Create a package.json file (if one does not exist): ```npm init```
 3. ```npm install --save-dev esri-wab-build```
 4. Add the following to your package.json's scripts object ```"build": "esri-wab-build"``` (Note: an optional parameter can be added to build a remote web app builder app.  For Example:  ```"esri-wab-build C:\arcgis-web-appbuilder-2.7\WebAppBuilderForArcGIS\server\apps\3"```)
 5. Any user that downloads your application will now be able to build:
@@ -47,9 +47,34 @@ This tool can be used as a library with the following functions:
   * Export and build the Web App Builder Application located at ```buildPath``` into a dist directory
   * Note: ```buildPath``` can be an application located in ```<web-app-builder-home>/server/apps/#```
   * Note: this function returns a promise that will provide the outputPath and outputZipPath when the build process is complete.
-* ```buildTool.buildApp(buildPath)```
+* ```buildTool.build(buildPath)```
   *  Build the Web App Builder Application located at ```buildPath```
   * Note: this function returns a promise that will provide the outputPath and outputZipPath when the build process is complete.
 * ```exportUtils.exportApp(buildPath)```
   * Export the Web App Builder Application located at ```buildPath``` to a dist directory.
   * Note: ```buildPath``` can be an application located in ```<web-app-builder-home>/server/apps/#```
+
+## Issues
+
+Find a bug or want to request a new feature?  Please let us know by submitting an issue.
+
+## Contributing
+
+Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
+
+## Licensing
+Copyright 2016 Esri
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+A copy of the license is available in the repository's [license.txt]( https://raw.github.com/Esri/esri-wab-build/master/license.txt) file.
